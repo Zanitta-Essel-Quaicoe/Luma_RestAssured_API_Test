@@ -1,0 +1,13 @@
+{
+  "create": {
+    "userId": 1,
+    "title": "Test Todo - Learn REST Assured",
+    "completed": false
+  },
+  "update": {
+    "id": 1,
+    "userId": 1,
+    "title": "Updated Todo Title",
+    "completed": true
+  }
+}
