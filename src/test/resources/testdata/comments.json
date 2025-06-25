@@ -1,0 +1,15 @@
+{
+  "create": {
+    "postId": 1,
+    "name": "Test Comment",
+    "email": "commenter@example.com",
+    "body": "This is a comment posted during testing."
+  },
+  "update": {
+    "id": 1,
+    "postId": 1,
+    "name": "Updated Comment",
+    "email": "updated@example.com",
+    "body": "Updated comment body."
+  }
+}
