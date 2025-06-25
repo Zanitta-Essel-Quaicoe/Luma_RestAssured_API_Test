@@ -70,12 +70,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
-                <configuration>
-                    <systemPropertyVariables>
-                        <!--suppress UnresolvedMavenProperty -->
-                        <allure.results.directory>${allure.results.directory}</allure.results.directory>
-                    </systemPropertyVariables>
-                </configuration>
+
             </plugin>
 
             <!-- Allure Report Plugin -->
