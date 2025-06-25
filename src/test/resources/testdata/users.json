@@ -1,0 +1,17 @@
+{
+  "create": {
+    "name": "Test User",
+    "username": "testuser",
+    "email": "testuser@example.com",
+    "phone": "123-456-7890",
+    "website": "testuser.com"
+  },
+  "update": {
+    "id": 1,
+    "name": "Updated User",
+    "username": "updateduser",
+    "email": "updated@example.com",
+    "phone": "987-654-3210",
+    "website": "updateduser.com"
+  }
+}
