@@ -43,7 +43,7 @@ jobs:
           allure generate target/allure-results --clean -o target/allure-report
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peace iris/actions-gh-pages@v4
         with:
             github_token: ${{ secrets.GH_TOKEN }}
             publish_dir: ./target/allure-report
