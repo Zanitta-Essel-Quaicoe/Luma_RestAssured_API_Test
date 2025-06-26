@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  run-tests:
+  test-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,22 +20,22 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Cache Maven packages
+      - name: Cache Maven dependencies
         uses: actions/cache@v4
         with:
           path: ~/.m2
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-maven
 
-      - name: Run Tests
+      - name: Run API Tests
         run: mvn clean test
 
-      - name: Install Allure commandline
+      - name: Set up Node.js (for Allure CLI)
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Install Allure CLI globally
+      - name: Install Allure CLI
         run: npm install -g allure-commandline --save-dev
 
       - name: Generate Allure HTML report
@@ -43,7 +43,7 @@ jobs:
           allure generate target/allure-results --clean -o target/allure-report
 
       - name: Deploy to GitHub Pages
-        uses: peace iris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
-            github_token: ${{ secrets.GH_TOKEN }}
-            publish_dir: ./target/allure-report
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./target/allure-report
